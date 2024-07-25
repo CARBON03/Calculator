@@ -1,4 +1,8 @@
-body {
+
+
+
+
+body  {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +30,7 @@ body {
 }
 
 input.js-calculation-display {
-  width: 90%;
+  width: 93%;
   height: 80px;
   text-align: right;
   padding: 10px;
@@ -44,7 +48,7 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 50%;
+  border-radius: 20%;
   box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
 }
 
@@ -58,12 +62,12 @@ button:hover {
 }
 
 .divideButton, .multiplyButton, .minusButton, .addButton, .calculateButton {
-  background-color: #ff9500;
+  background-color: #ff9500c5;
   color: #fff;
 }
 
 button:not(.acButton):not(.signButton):not(.moduloButton):not(.divideButton):not(.multiplyButton):not(.minusButton):not(.addButton):not(.calculateButton) {
-  background-color: #333;
+  background-color: #5d5d5d;
   color: white;
 }
 
@@ -77,10 +81,43 @@ button.zero {
 }
 
 .mainCalculatorBlock{
-  background-color: #000;
+  background-color: rgb(64, 64, 64);
   border-radius: 20px;
   padding: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transform: scale(0.8);
+  transform-origin: center;
 }
 
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+footer{
+  font-size: medium;
+}
+
+a:link, a:visited {
+  background-color: #ffffff6a;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 50px;
+}
+
+a:hover, a:active {
+  background-color: rgba(245, 245, 245, 0.779);
+  
+}
