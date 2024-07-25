@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body onkeydown="keyDownDisplay(event);">
+
+  <div class="mainCalculatorBlock">
+    <div class="display-container">
+      <input class="js-calculation-display" disabled>
+    </div>
+    
+    <div class="buttons">
+      <button class="acButton" onclick="buttonClicked('acButton')">AC</button>
+      <button class="signButton" onclick="buttonClicked('signButton')">+/-</button>
+      <button class="moduloButton" onclick="buttonClicked('moduloButton')">%</button>
+      <button class="divideButton" onclick="signClicked(' / ')">÷</button>
+      
+      <button onclick="numberClicked(7)">7</button>
+      <button onclick="numberClicked(8)">8</button>
+      <button onclick="numberClicked(9)">9</button>
+      <button class="multiplyButton" onclick="signClicked(' * ')">×</button>
+      
+      <button onclick="numberClicked(4)">4</button>
+      <button onclick="numberClicked(5)">5</button>
+      <button onclick="numberClicked(6)">6</button>
+      <button class="minusButton" onclick="signClicked(' - ')">–</button>
+      
+      <button onclick="numberClicked(1)">1</button>
+      <button onclick="numberClicked(2)">2</button>
+      <button onclick="numberClicked(3)">3</button>
+      <button class="addButton" onclick="signClicked(' + ')">+</button>
+      
+      <button class="zero" onclick="numberClicked(0)">0</button>
+      <button class="dotButton" onclick="numberClicked('.')">.</button>
+      <button class="calculateButton" onclick="showResult()">=</button>
+    </div>
+  
+  </div>
+  
+  <script src="./index.js"></script>
+</body>
+</html>

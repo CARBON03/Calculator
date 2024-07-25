@@ -1,0 +1,76 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: grey;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: #fff;
+  user-select: none;
+}
+
+.display-container {
+  max-width: 320px;
+  width: 100%;
+  padding: 10px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 320px;
+  width: 100%;
+}
+
+input.js-calculation-display {
+  width: 90%;
+  height: 80px;
+  text-align: right;
+  padding: 10px;
+  font-size: 3em;
+  border: none;
+  background: #000;
+  color: #fff;
+  box-shadow: 0px 0px 5px rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+button {
+  height: 80px;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.acButton, .signButton, .moduloButton {
+  background-color: #a5a5a5;
+  color: #000;
+}
+
+.divideButton, .multiplyButton, .minusButton, .addButton, .calculateButton {
+  background-color: #ff9500;
+  color: #fff;
+}
+
+button:not(.acButton):not(.signButton):not(.moduloButton):not(.divideButton):not(.multiplyButton):not(.minusButton):not(.addButton):not(.calculateButton) {
+  background-color: #333;
+  color: white;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button.zero {
+  grid-column: span 2;
+  border-radius: 40px;
+}

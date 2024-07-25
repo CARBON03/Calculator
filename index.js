@@ -1,0 +1,84 @@
+let calculation = '0';
+updateDisplay()
+
+function numberClicked(x) {
+  calculation += x;
+  console.log(calculation);
+  updateDisplay();
+  return calculation;   
+}
+
+function buttonClicked(buttonClass) {
+  if(buttonClass === 'signButton'){
+    calculation = calculation * (-1);
+    updateDisplay();
+    console.log(calculation);
+  }else if (buttonClass === 'acButton'){
+    calculation = '0';
+    updateDisplay();
+    console.log(calculation);
+  } 
+
+}
+
+function signClicked(x) {
+  calculation += x ;
+  updateDisplay()   
+  console.log(calculation);
+  return calculation;
+}
+
+function updateDisplay() {
+  document.querySelector('.js-calculation-display').value = calculation;
+}
+
+function showResult() {
+  try {
+    calculation = String(eval(calculation));
+    updateDisplay();
+    console.log(calculation);
+    calculation = '';
+  } catch (e) {
+    calculation = 'Error';
+    updateDisplay();
+    console.log('Error');
+  }
+}
+
+function keyDownDisplay(event){
+  if(event.key === 'Backspace'){
+    calculation = '0';
+    updateDisplay()
+    console.log(calculation);
+  }else if (event.key === 'Enter'){
+    try {
+      calculation = String(eval(calculation));
+      updateDisplay();
+      console.log(calculation);
+      calculation = '';
+    } catch (e) {
+      calculation = 'Error';
+      updateDisplay();
+      console.log('Error');
+    }
+  }
+
+
+  if(event.key === "0" || event.key === "1" || event.key === "2" || event.key === "3" || event.key === "4" || event.key === "5" ||event.key === "6" || event.key === "7" || event.key === "8" || event.key === "9" || event.key === "." ){
+    calculation += event.key;
+    console.log(calculation);
+    updateDisplay()
+    return calculation;
+  }
+
+  if(event.key === "*" || event.key === "-" || event.key === "+" || event.key === "/" ){
+    calculation += event.key ;
+    updateDisplay()   
+    console.log(calculation);
+    return calculation;
+  }
+}
+
+
+
+
