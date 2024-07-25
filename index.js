@@ -2,6 +2,11 @@ let calculation = '0';
 updateDisplay()
 
 function numberClicked(x) {
+  if (calculation 
+    === "0"
+  ){
+    calculation="";
+  }
   calculation += x;
   console.log(calculation);
   updateDisplay();
@@ -14,7 +19,11 @@ function buttonClicked(buttonClass) {
     updateDisplay();
     console.log(calculation);
   }else if (buttonClass === 'acButton'){
-    calculation = '0';
+    if(calculation.length === 1){
+      calculation = "0";
+    }else{
+      calculation = calculation.slice(0, -1);
+    }
     updateDisplay();
     console.log(calculation);
   } 
@@ -32,9 +41,13 @@ function updateDisplay() {
   document.querySelector('.js-calculation-display').value = calculation;
 }
 
+
+
+//this calculates the equation
 function showResult() {
   try {
     calculation = String(eval(calculation));
+    calculation = Number(parseFloat(calculation).toFixed(2));
     updateDisplay();
     console.log(calculation);
     calculation = '';
@@ -47,14 +60,19 @@ function showResult() {
 
 function keyDownDisplay(event){
   if(event.key === 'Backspace'){
-    calculation = '0';
-    updateDisplay()
+    if(calculation.length === 1){
+      calculation = "0";
+    }else{
+      calculation = calculation.slice(0, -1);
+    }
+    updateDisplay();
     console.log(calculation);
   }else if (event.key === 'Enter'){
     try {
       calculation = String(eval(calculation));
+      calculation = Number(parseFloat(calculation).toFixed(2));
       updateDisplay();
-      console.log(calculation);
+      console.log(parseFloat(calculation).toFixed(2));
       calculation = '';
     } catch (e) {
       calculation = 'Error';
@@ -65,6 +83,11 @@ function keyDownDisplay(event){
 
 
   if(event.key === "0" || event.key === "1" || event.key === "2" || event.key === "3" || event.key === "4" || event.key === "5" ||event.key === "6" || event.key === "7" || event.key === "8" || event.key === "9" || event.key === "." ){
+    if (calculation 
+      === "0"
+    ){
+      calculation="";
+    }
     calculation += event.key;
     console.log(calculation);
     updateDisplay()
